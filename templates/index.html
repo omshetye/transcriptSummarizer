@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="{{url_for("summarize")}}" method="post">
+    <textarea name="url_search" placeholder="Enter a URL ",  required="required"></textarea>
+    <button type="submit">Summarize</button>
+  </form>
+  <h3>Summarized Text: </h3>
+  <textarea name="result" cols="30" rows="10">{{results}}</textarea>
+</body>
+</html>

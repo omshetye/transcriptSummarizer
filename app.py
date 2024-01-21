@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 import requests
+import re
 from urllib.parse import urlparse, parse_qs
 from youtube_transcript_api import YouTubeTranscriptApi as yta
 from flask import request as rq
@@ -15,10 +16,11 @@ def summarize():
     API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
     headers = {"Authorization": "Bearer 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"}
     url=rq.form["url_search"]
+    eurl=convert_to_embed(url)
     id=get_youtube_video_id(url)
     data=get_transcript(id)
-    minL=80
-    maxL=150
+    maxL=int(rq.form["maxL"])
+    minL=maxL//4
     def query(payload):
       response = requests.post(API_URL, headers=headers, json=payload)
       return response.json()
@@ -27,7 +29,7 @@ def summarize():
       "inputs": data,
       "parameters":{"min_length":minL, "max_length":maxL}
     })
-    return render_template("index.html", results=output[0]['summary_text'])
+    return render_template("index.html", results=output[0]['summary_text'], vidurl=eurl)
   else:
     return render_template("index.html")
 
@@ -82,6 +84,17 @@ def get_transcript(video_id):
         return transcript
     else:
         print("No transcript available for the given video.")
+        return None
+
+def convert_to_embed(url):
+    # Extract video ID from URL
+    video_id_match = re.search(r'(?<=v=)[^&#]+', url) or re.search(r'(?<=be/)[^&#]+', url)
+    video_id = video_id_match.group() if video_id_match else None
+    if video_id:
+        # Construct the embeddable URL
+        embed_url = f"https://www.youtube.com/embed/{video_id}"
+        return embed_url
+    else:
         return None
 
 if __name__=='__main__':

@@ -1,0 +1,96 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, form {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f5f9; /* Light blue background color */
+  color: #333; /* Dark text color */
+}
+
+form {
+  margin: 20px;
+}
+
+iframe {
+  padding: 10px;
+  margin-left: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #3498db; /* Border color */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+h3 {
+  margin: 20px;
+  color: #3498db; /* Heading text color */
+}
+
+/* Style the result textarea separately */
+textarea[name="result"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #3498db; /* Border color */
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0 20px 20px;
+}
+
+/* Responsive layout adjustments (optional) */
+@media (max-width: 600px) {
+  textarea {
+      width: calc(100% - 20px);
+      margin: 0 10px 10px;
+  }
+
+  textarea[name="result"] {
+      width: calc(100% - 40px);
+      margin: 0 20px 20px;
+  }
+}
+
+header {
+  background-color: #4169e1; /* RoyalBlue */
+  color: #fff; /* White */
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #0b0000; /* DarkSlateGray */
+}
+
+nav ul li a:hover {
+  color: #b4b9ca; /* RoyalBlue */
+}

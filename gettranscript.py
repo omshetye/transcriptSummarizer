@@ -1,5 +1,6 @@
 from urllib.parse import urlparse, parse_qs
 from youtube_transcript_api import YouTubeTranscriptApi as yta
+import spacy
 
 def get_youtube_video_id(url):
     # Parse the URL
@@ -54,10 +55,24 @@ def get_transcript(video_id):
         print("No transcript available for the given video.")
         return None
 
+def get_keywords(paragraph):
+    # Load the English language model
+    nlp = spacy.load("en_core_web_sm")
+
+    # Process the input paragraph
+    doc = nlp(paragraph)
+
+    # Extract keywords (nouns and proper nouns)
+    keywords = [token.text for token in doc if token.pos_ in ['NOUN', 'PROPN'] and len(token.text) > 4]
+
+    return keywords
+
+
 # Example usage
 
-video_id = get_youtube_video_id("https://www.youtube.com/watch?v=Z6nkEZyS9nA")
+video_id = get_youtube_video_id("https://www.youtube.com/watch?v=pQCJmxEOzhs")
 
 transcript_result = get_transcript(video_id)
 
-
+kw = get_keywords(transcript_result)
+print(kw)

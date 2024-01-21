@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <form action="{{url_for("summarize")}}" method="post">
-    <textarea name="url_search" placeholder="Enter a URL ",  required="required"></textarea>
+{% extends 'header.html' %}
+
+{% block title %}Summarizer App{% endblock %}
+
+{% block content %}
+  <form action="{{ url_for("summarize") }}" method="post">
+    <textarea name="url_search" placeholder="Enter a URL" required="required"></textarea>
+    <input type="range" min="20" max="1000" name="maxL" value="100">
+    <label for="maxL">Select summary length</label>
+    <button type="reset">Clear</button>
     <button type="submit">Summarize</button>
   </form>
+  <h3>Video:</h3>
+  <iframe width="400" height="200"
+  src={{ vidurl }}>
+  </iframe>
   <h3>Summarized Text: </h3>
-  <textarea name="result" cols="30" rows="10">{{results}}</textarea>
-</body>
-</html>
+  <textarea name="result" cols="30" rows="10">{{ results }}</textarea>
+{% endblock %}

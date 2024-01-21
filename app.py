@@ -10,6 +10,10 @@ app = Flask(__name__)
 def index():
   return render_template("index.html")
 
+@app.route('/Contact')
+def contacts():
+    return render_template('contact.html')
+
 @app.route("/summarize", methods=["GET", "POST"])
 def summarize():
   if rq.method == "POST":

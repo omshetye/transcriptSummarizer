@@ -1,77 +1,30 @@
-/* Reset some default styles */
-body, h1, h2, h3, p, form {
+body {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f5f9; /* Light blue background color */
-  color: #333; /* Dark text color */
-}
-
-form {
-  margin: 20px;
-}
-
-iframe {
-  padding: 10px;
-  margin-left: 10px;
-}
-
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  border: 1px solid #3498db; /* Border color */
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #3498db; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-h3 {
-  margin: 20px;
-  color: #3498db; /* Heading text color */
-}
-
-/* Style the result textarea separately */
-textarea[name="result"] {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #3498db; /* Border color */
-  border-radius: 5px;
-  font-size: 16px;
-  margin: 0 20px 20px;
-}
-
-/* Responsive layout adjustments (optional) */
-@media (max-width: 600px) {
-  textarea {
-      width: calc(100% - 20px);
-      margin: 0 10px 10px;
-  }
-
-  textarea[name="result"] {
-      width: calc(100% - 40px);
-      margin: 0 20px 20px;
-  }
+  background-color: #1A1A1D; /* Dark background color */
+  font-family: 'ACME', sans-serif;
+  color: #F5F5F5; /* Light text color */
+  line-height: 1.6;
 }
 
 header {
-  background-color: #4169e1; /* RoyalBlue */
-  color: #fff; /* White */
-  padding: 10px;
+  background-color: #C3073F; /* Dark red */
+  color: #F5F5F5;
+  padding: 20px;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.logo {
+  max-width: 50px; /* Adjust the value to your preferred size */
+  height: auto; /* Maintain the aspect ratio */
+}
+h1, h2, h4, h5, h6 {
+  font-family: 'ACME', sans-serif; /* ACME font for headers */
+  margin: 0;
+}
+
+H3{
   text-align: center;
 }
 
@@ -88,9 +41,157 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #0b0000; /* DarkSlateGray */
+  color: #F5F5F5;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #b4b9ca; /* RoyalBlue */
+  color: #C3073F; /* Dark red on hover */
+}
+
+h7{
+  align-content: center;
+}
+
+form {
+  margin: 20px;
+  background-color: #1A1A1D; /* Dark background color */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 2px solid transparent; /* Removed the border */
+  border-radius: 8px;
+  font-size: 18px;
+  background-color: #1A1A1D; /* Dark background color */
+  color: #F5F5F5;
+}
+
+textarea[name="url_search"] {
+  font-family: 'ACME', sans-serif; /* Set the font family for the textarea */
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 2px solid transparent; /* Removed the border */
+  border-radius: 8px;
+  font-size: 18px;
+  background-color: #1A1A1D; /* Dark background color */
+  color: #F5F5F5;
+}
+
+textarea[name="result"] {
+  font-family: 'ACME', sans-serif; /* Set the font family for the textarea */
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 2px solid transparent; /* Removed the border */
+  border-radius: 8px;
+  font-size: 18px;
+  background-color: #1A1A1D; /* Dark background color */
+  color: #F5F5F5;
+}
+
+input[type="range"] {
+  width: 100%;
+  background-color: #C3073F; /* Dark red for range bar background color */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Add this style to change the color of the range itself */
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #F5F5F5; /* Light color for the range thumb */
+}
+
+/* For Firefox */
+input[type="range"]::-moz-range-thumb {
+  background-color: #F5F5F5; /* Light color for the range thumb */
+}
+
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button {
+  background-color: transparent; /* Removed the background color */
+  font-family: 'ACME', sans-serif; /* ACME font for buttons */
+  font-weight: bold; /* Make it bold */
+  text-align: right; /* Right align the button */
+}
+
+.summarize-button {
+  background-color: transparent; /* Removed the background color */
+  color: #F5F5F5;
+  font-family: 'ACME', sans-serif; /* ACME font for buttons */
+  font-weight: bold; /* Make it bold */
+  text-align: right; /* Right align the button */
+}
+
+button:hover {
+  background-color: #444; /* Darker shade on hover */
+}
+
+.video-container,
+.result-container {
+  margin: 20px;
+  background-color: #1A1A1D; /* Dark background color */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0
+  0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.video-frame {
+  width: 400px; /* Set the width as per your requirement */
+  height: 200px; /* Set the height as per your requirement */
+  margin: 0 auto; /* Center align the frame */
+  border: 2px solid transparent; /* Removed the border */
+  border-radius: 10px; /* Rounded
+  overflow: hidden; /* Hide any content that overflows the frame */
+}
+
+.video-container {
+  border: 2px solid transparent; /* Removed the border */
+  margin-right: 20px; /* Add margin to separate video and result */
+}
+
+.result-container {
+  flex: 1; /* Take remaining space */
+}
+
+.result-container textarea {
+  background-color: #1A1A1D; /* Dark background color */
+  font-family: 'ACME', sans-serif;
+}
+
+@media (max-width: 600px) {
+  textarea {
+    width: calc(100% - 20px);
+    margin: 0 10px 10px;
+  }
+
+  .video-container,
+  .result-container {
+    margin: 10px;
+  }
 }

@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background-color: #C3073F; /* Dark red */
+  background-color: #B72622; /* Dark red */
   color: #F5F5F5;
   padding: 20px;
   text-align: center;
@@ -20,18 +20,20 @@ header {
   height: auto; /* Maintain the aspect ratio */
 }
 h1, h2, h4, h5, h6 {
-  font-family: 'ACME', sans-serif; /* ACME font for headers */
+  font-family: 'Poppins', sans-serif; /* ACME font for headers */
   margin: 0;
 }
 
 H3{
   text-align: center;
+  font-family: 'Poppins', sans-serif; 
 }
 
 nav ul {
   list-style-type: none;
   margin: 10px;
   padding: 10px;
+  font-family: 'Poppins', sans-serif; /* Use the correct property for the font family */
 }
 
 nav ul li {
